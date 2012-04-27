@@ -1,4 +1,8 @@
 Babybrag::Application.routes.draw do
+  get "users/index"
+
+  get "users/show"
+
   authenticated :user do
     root :to => 'home#index'
   end

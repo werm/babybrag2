@@ -24,6 +24,12 @@
     %i (we need your current password to confirm your changes)
     %br/
     = f.password_field :current_password
+    
+    %p
+      = image_tag(@user.profile_pic) if @user.profile_pic?       
+      = f.file_field :profile_pic
+ 
+          
   %p= f.submit "Update"
 %h3 Cancel my account
 %p

@@ -1,3 +1,6 @@
-%h3 Home
-- @users.each do |user|
-  %p User: #{link_to user.name, user}
+.row-fluid
+  .span12
+    - @users.each do |user|
+      .member.span3
+        = image_tag user.profile_pic_url(:thumb).to_s
+        %p User: #{link_to user.name, user}
