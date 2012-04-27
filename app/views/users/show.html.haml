@@ -5,5 +5,4 @@
 %p
   Email: #{@user.email if @user.email}
 
-- if user.has_role? :admin
-  = link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete
+/- if current_user.try(:admin?)

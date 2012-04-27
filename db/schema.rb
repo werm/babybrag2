@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120427141625) do
+ActiveRecord::Schema.define(:version => 20120427203119) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(:version => 20120427141625) do
     t.string   "city"
     t.string   "state"
     t.string   "profile_pic"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
