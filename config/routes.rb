@@ -1,4 +1,6 @@
 Babybrag::Application.routes.draw do
+  resources :baby_pics
+
   get "users/index"
 
   get "users/show"

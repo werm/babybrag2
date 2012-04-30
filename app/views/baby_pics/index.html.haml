@@ -1,0 +1,23 @@
+%h1 Listing baby_pics
+
+%table
+  %tr
+    %th Image
+    %th Title
+    %th Private
+    %th
+    %th
+    %th
+
+  - @baby_pics.each do |baby_pic|
+    %tr
+      %td= baby_pic.image
+      %td= baby_pic.title
+      %td= baby_pic.private
+      %td= link_to 'Show', baby_pic
+      %td= link_to 'Edit', edit_baby_pic_path(baby_pic)
+      %td= link_to 'Destroy', baby_pic, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Baby pic', new_baby_pic_path

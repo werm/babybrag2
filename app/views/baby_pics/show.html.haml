@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Image:
+  = @baby_pic.image
+%p
+  %b Title:
+  = @baby_pic.title
+%p
+  %b Private:
+  = @baby_pic.private
+
+= link_to 'Edit', edit_baby_pic_path(@baby_pic)
+\|
+= link_to 'Back', baby_pics_path

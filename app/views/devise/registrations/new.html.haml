@@ -34,7 +34,7 @@
       = f.text_field :state, :id => 'state'
 
   %p
-    = f.file_field :image
+    = f.file_field :profile_pic
     = image_tag(@user.profile_pic) if @user.profile_pic?      
       
   %p= f.submit "Sign up"
