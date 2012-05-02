@@ -1,8 +1,7 @@
 .profile
-  = image_tag @user.profile_pic_url(:thumb).to_s
+  = image_tag @user.profile_pic_url(:full).to_s
 %p
   User: #{@user.name}
 %p
   Email: #{@user.email if @user.email}
-
 /- if current_user.try(:admin?)

@@ -2,5 +2,5 @@
   .span12
     - @users.each do |user|
       .member.span3
-        = image_tag user.profile_pic_url(:thumb).to_s
-        %p User: #{link_to user.name, user}
+        =link_to image_tag(user.profile_pic_url(:thumb)), user
+        %p #{link_to user.name, user}

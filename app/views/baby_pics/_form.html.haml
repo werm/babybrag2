@@ -1,8 +1,8 @@
-= simple_form_for(@baby_pic) do |f|
+= simple_form_for(@baby_pic, :html => {:multipart => true}) do |f|
   = f.error_notification
 
   .form-inputs
-    = f.input :image
+    = f.file_field :photo
     = f.input :title
     = f.input :private
 

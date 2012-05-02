@@ -1,8 +1,7 @@
 %p#notice= notice
 
 %p
-  %b Image:
-  = @baby_pic.image
+  = image_tag @baby_pic.photo_url(:full).to_s
 %p
   %b Title:
   = @baby_pic.title
