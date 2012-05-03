@@ -1,6 +1,8 @@
 Babybrag::Application.routes.draw do
   resources :baby_pics
 
+  get "baby_pics/index"
+
   get "users/index"
 
   get "users/show"
@@ -12,5 +14,4 @@ Babybrag::Application.routes.draw do
   devise_for :users
   resources :users, :only => [:show, :index]
   
-  mount ActsAsCaesar::Rails::Engine => "/acts_as_caesar"
 end

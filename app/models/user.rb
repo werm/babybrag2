@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-	rolify
+
+  acts_as_voter
+  
+  rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable, :confirmable,
@@ -10,5 +13,5 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   mount_uploader :profile_pic, ImageUploader
   
-  include ActsAsCaesar::ActAsCandidate
+  #include ActsAsCaesar::ActAsCandidate
 end
