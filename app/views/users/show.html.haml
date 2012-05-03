@@ -4,4 +4,6 @@
   User: #{@user.name}
 %p
   Email: #{@user.email if @user.email}
+%p
+
 /- if current_user.try(:admin?)
