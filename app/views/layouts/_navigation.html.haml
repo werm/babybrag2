@@ -4,12 +4,12 @@
   %span.icon-bar
 = link_to "Baby Brag", root_path, :class => 'brand'
 .nav-collapse
-  %ul.nav
+  %ul.nav.pull-right
     - if user_signed_in?
-      %li
-        = link_to('Logout', destroy_user_session_path, :method=>'delete')
+      = link_to('Logout', destroy_user_session_path, :method=>'delete', :class => 'btn btn-danger')
     - else
       %li#menu1.dropdown
+        %i.icon-key
         %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#menu1"}
           Login
           %b.caret
@@ -22,6 +22,7 @@
               = label_tag 'user[remember_me]', 'Remember me'
               %button.btn Sign in
               = link_to "Forgot your password?", new_password_path('user')
+  %ul.nav
     - if user_signed_in?
       %li
         = link_to('Add a Picture!', new_baby_pic_path)

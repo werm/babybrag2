@@ -47,5 +47,8 @@ gem "simple_form"
 gem "will_paginate", ">= 3.0.3"
 gem 'carrierwave'
 gem "rmagick"
-gem "thumbs_up"
-#gem 'acts_as_caesar', :git => 'git@github.com:werm/acts_as_caesar.git'
+gem "recommendable", :git => "git://github.com/davidcelis/recommendable"
+# gem "remotipart", "~> 1.0"
+# Getting a routing error, everything looked right... 
+# gem "thumbs_up"
+# gem 'acts_as_caesar', :git => 'git@github.com:werm/acts_as_caesar.git'
