@@ -1,6 +1,5 @@
 .row-fluid
   .span12
-    = link_to "Baby Pictures", baby_pics_path(@baby_pics)
     - @users.each do |user|
       .member.span3
         =link_to image_tag(user.profile_pic_url(:thumb)), user

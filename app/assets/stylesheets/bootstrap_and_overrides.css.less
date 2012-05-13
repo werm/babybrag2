@@ -28,8 +28,21 @@ body { padding-top: 60px; }
 // Example:
 // @linkColor: #ff0000;
 
+//Navbar
+@navbarBackground: #0099CC;
+@navbarBackgroundHighlight: #33B5E5;
+@navbarText: #eee;
+@navbarLinkColor: #eee;
+
+
 .nav > li > a {
 	display: inline-block;
+}
+
+.navbar .brand {
+  font-weight: bold;
+  color: darken(@navbarBackground, 5%);
+  text-shadow: 0 1px 0 @navbarBackgroundHighlight;
 }
 
 .navbar .nav > li > a.btn {
@@ -40,6 +53,90 @@ body { padding-top: 60px; }
   }
 }
 
+.content {
+	background: transparent;
+	box-shadow: none;
+}
+
+
+.hero-unit {
+  background: #eee none no-repeat fixed top left;
+  background-image: -webkit-gradient(linear, 100% 0%, 100% 100%, from(#dddddd), color-stop(25%, #f2f2f2), color-stop(75%, #f2f2f2), to(#dddddd));
+  background-image: -moz-linear-gradient(top, #dddddd, #f2f2f2, #f2f2f2, #dddddd);
+  -webkit-font-smoothing: antialiased;
+  border-top: #d5d5d5;
+}
+
+.landing .btn-large {
+  font-size: 20px;
+  font-weight: normal;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-right: 10px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.landing .btn-success {
+  padding-left: 56px;
+  padding-right: 56px;
+}
+
+.landing h1, .landing p {
+  margin-bottom: 28px;
+  text-align: center;
+  text-shadow: 0 -1px 0 #fff;
+}
+
+.landing h1 {
+  display: block;
+  width: 100%;
+  font-size: 50px;
+}
+
+.landing p {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 300;
+}
+
+.login {
+  display: none;
+}
+
+.landing-form label {
+  display: inline-block;
+}
+
 .dropdown-menu form {
   padding: 20px;
+}
+
+
+//Media Queries
+@media all and (max-width: 480px) {
+  
+.hero-unit {
+  padding: 30px;
+}
+
+.landing h1 {
+  font-size: 28px;
+  line-height: 32px;
+}
+
+.landing p {
+  font-size: 18px;
+  line-height: 24px;  
+}
+
+.landing .btn-large {
+  font-size: 14px;
+  font-weight: normal;
+  padding: 8px 18px;
+}
+
 }

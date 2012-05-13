@@ -12,11 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.remotipart
 //= require twitter/bootstrap
 
 $(function() {
+  // Hide alert notices after 4 seconds
   $('.alert').delay(4000).fadeOut('slow');
+
+  // Landing page login
+  $('.login-button').click(function(){
+    $('.login').slideToggle('slow');
+  });
+
   // Setup drop down menu
   $('.dropdown-toggle').dropdown();
  

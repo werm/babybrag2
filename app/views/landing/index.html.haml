@@ -1,9 +1,12 @@
-.hero-unit
-  .span6.offset3
-    %h1
-      Hello!
-    %p
-      Please 
-      = link_to('Log In!', user_session_path, :class => 'btn btn-primary')
-      or
-      = link_to('Sign up!', new_user_registration_path, :class => 'btn btn-success')
+.hero-unit.landing
+  .row-fluid
+    .span12
+      %h1
+        You 
+        %em know 
+        your kid is the cutest...
+      %p
+        Now you can prove it!
+      %p
+        = link_to(' Sign up!', new_user_registration_path, :class => 'btn btn-success btn-large icon-user span4')        
+        = link_to(' Log In!', user_session_path, :class => 'btn btn-primary btn-large icon-signin span2')

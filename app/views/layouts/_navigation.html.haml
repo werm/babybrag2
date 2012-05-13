@@ -6,32 +6,21 @@
 .nav-collapse
   %ul.nav.pull-right
     - if user_signed_in?
-      = link_to('Logout', destroy_user_session_path, :method=>'delete', :class => 'btn btn-danger')
+      %li
+        = link_to('Edit account', edit_user_registration_path)    
+    - if user_signed_in?
+      %li
+        = link_to('Logout', destroy_user_session_path, :method=>'delete', :class => 'btn btn-danger')
     - else
-      %li#menu1.dropdown
-        %i.icon-key
-        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#menu1"}
-          Login
-          %b.caret
-        %ul.dropdown-menu
-          %li
-            = form_tag user_session_path do
-              = text_field_tag 'user[email]'
-              = password_field_tag 'user[password]'
-              = check_box_tag 'user[remember_me]'
-              = label_tag 'user[remember_me]', 'Remember me'
-              %button.btn Sign in
-              = link_to "Forgot your password?", new_password_path('user')
+      %span
   %ul.nav
     - if user_signed_in?
       %li
-        = link_to('Add a Picture!', new_baby_pic_path)
-    - if user_signed_in?
+        = link_to "Baby Pictures", baby_pics_path(@baby_pics)
       %li
-        = link_to('Edit account', edit_user_registration_path)
+        = link_to('Add a Picture!', new_baby_pic_path)
       - if current_user.has_role? :admin
         %li
           = link_to('Admin', users_path)
     - else
       %li
-        = link_to('Sign up', new_user_registration_path)
