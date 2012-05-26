@@ -9,8 +9,22 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap-wysihtml5
  *= require_tree .
 */
+
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+
+@font-face {
+    font-family: 'Pacifico';
+    src: font-url('pacifico.eot');
+    src: font-url('pacifico.eot?#iefix') format('embedded-opentype'),
+         font-url('pacifico.woff') format('woff'),
+         font-url('pacifico.ttf') format('truetype'),
+         font-url('pacifico.svg#Pacifico') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .content {
   background-color: #eee;

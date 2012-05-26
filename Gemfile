@@ -47,7 +47,11 @@ gem "simple_form"
 gem "will_paginate", ">= 3.0.3"
 gem 'carrierwave'
 gem "rmagick"
-gem "recommendable", :git => "git://github.com/davidcelis/recommendable"
+gem "omniauth-twitter"
+gem 'bootstrap-wysihtml5-rails'
+gem 'sextant' 
+#gem "recommendable", :git => "git://github.com/davidcelis/recommendable"
+#gem 'socialite'
 # gem "remotipart", "~> 1.0"
 # Getting a routing error, everything looked right... 
 # gem "thumbs_up"

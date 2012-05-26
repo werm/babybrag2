@@ -33,16 +33,42 @@ body { padding-top: 60px; }
 @navbarBackgroundHighlight: #33B5E5;
 @navbarText: #eee;
 @navbarLinkColor: #eee;
+@titleGreen: #0fa;
 
+.btn-success {
+  background-color: #5bb75b;
+  background-image: -moz-linear-gradient(top, @titleGreen, darken(@titleGreen, 10%));
+  background-image: -ms-linear-gradient(top, @titleGreen, darken(@titleGreen, 10%));
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@titleGreen), to(darken(@titleGreen, 10%)));
+  background-image: -webkit-linear-gradient(top, @titleGreen, darken(@titleGreen, 10%));
+  background-image: -o-linear-gradient(top, @titleGreen, darken(@titleGreen, 10%));
+  background-image: linear-gradient(top, @titleGreen, darken(@titleGreen, 10%));
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#51a351', GradientType=0);
+}
+
+h1.title {
+  font-size: 96px;
+  font-family: "Pacifico", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: @titleGreen;
+  text-shadow: 0 2px 0 darken(@titleGreen, 20%);
+  margin-bottom: 60px;
+}
+
+h1.tagline {
+  font-size: 50px;
+  text-shadow: 0 -1px 0 #fff;  
+}
 
 .nav > li > a {
 	display: inline-block;
 }
 
 .navbar .brand {
-  font-weight: bold;
-  color: darken(@navbarBackground, 5%);
-  text-shadow: 0 1px 0 @navbarBackgroundHighlight;
+  font-family: "Pacifico", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
 .navbar .nav > li > a.btn {
@@ -60,11 +86,13 @@ body { padding-top: 60px; }
 
 
 .hero-unit {
-  background: #eee none no-repeat fixed top left;
-  background-image: -webkit-gradient(linear, 100% 0%, 100% 100%, from(#dddddd), color-stop(25%, #f2f2f2), color-stop(75%, #f2f2f2), to(#dddddd));
-  background-image: -moz-linear-gradient(top, #dddddd, #f2f2f2, #f2f2f2, #dddddd);
+//  background: #eee none no-repeat fixed top left;
+//  background-image: -webkit-gradient(linear, 100% 0%, 100% 100%, from(#dddddd), color-stop(25%, #f2f2f2), color-stop(75%, #f2f2f2), to(#dddddd));
+//  background-image: -moz-linear-gradient(top, #dddddd, #f2f2f2, #f2f2f2, #dddddd);
+  background: transparent;
   -webkit-font-smoothing: antialiased;
   border-top: #d5d5d5;
+  padding-top: 20px;
 }
 
 .landing .btn-large {
@@ -83,16 +111,14 @@ body { padding-top: 60px; }
   padding-right: 56px;
 }
 
-.landing h1, .landing p {
+h1.tagline {
   margin-bottom: 28px;
   text-align: center;
-  text-shadow: 0 -1px 0 #fff;
 }
 
 .landing h1 {
   display: block;
   width: 100%;
-  font-size: 50px;
 }
 
 .landing p {
@@ -101,6 +127,8 @@ body { padding-top: 60px; }
   font-size: 30px;
   line-height: 36px;
   font-weight: 300;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .login {
@@ -115,28 +143,80 @@ body { padding-top: 60px; }
   padding: 20px;
 }
 
+.member a img {
+	-moz-border-radius: 100em;
+	-webkit-border-radius: 100em;
+	border-radius: 100em;
+  -webkit-mask-box-image: url(mask.png);	
+}
+
+.member p {
+  margin-top: 12px;
+  font-family: 'Arvo', serif;	  
+}
+
+
+.member a {
+  clear: both;
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  color: #e03e51;
+  display: block;
+}
 
 //Media Queries
-@media all and (max-width: 480px) {
+
+// Small phones
+@media (max-width: 320px) {
+  .landing .btn-large {
+    font-size: 12px;
+    font-weight: normal;
+    padding: 4px 14px;
+    margin-right: 6px;
+  }  
+}
+
+// Landscape phones and down
+  @media (max-width: 480px) { 
   
-.hero-unit {
-  padding: 30px;
+  .hero-unit {
+    padding: 30px;
+  }
+  
+  .landing h1 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  
+  .landing p {
+    font-size: 18px;
+    line-height: 24px;  
+  }
+  
+  .landing .btn-large {
+    font-size: 12px;
+    font-weight: normal;
+    padding: 4px 14px;
+    margin-right: 6px;
+  }  
 }
-
-.landing h1 {
-  font-size: 28px;
-  line-height: 32px;
+ 
+  // Landscape phone to portrait tablet
+  @media (min-width: 480) and (max-width: 767px) {
+  
+  .landing .btn-large {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 6px 16px;
+    margin-right: 6px;
+  }
+  
 }
-
-.landing p {
-  font-size: 18px;
-  line-height: 24px;  
-}
-
-.landing .btn-large {
-  font-size: 14px;
-  font-weight: normal;
-  padding: 8px 18px;
-}
-
-}
+ 
+  // Portrait tablet to landscape and desktop
+  @media (min-width: 768px) and (max-width: 979px) {  }
+ 
+  // Large desktop
+  @media (min-width: 1200px) {  }

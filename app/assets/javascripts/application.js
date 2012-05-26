@@ -12,9 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+
+//= require bootstrap-wysihtml5-all
 //= require twitter/bootstrap
 
 $(function() {
+  
+  $('#test').wysihtml5();
+  
   // Hide alert notices after 4 seconds
   $('.alert').delay(4000).fadeOut('slow');
 

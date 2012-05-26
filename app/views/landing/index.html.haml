@@ -1,12 +1,17 @@
 .hero-unit.landing
   .row-fluid
+    %h1.title
+      Baby Brag
+  .row-fluid    
     .span12
-      %h1
-        You 
-        %em know 
-        your kid is the cutest...
+      %h1.tagline
+        You know your kid is the cutest...
       %p
         Now you can prove it!
+  .row-fluid
+    .span3
+      &nbsp
+    .span6
       %p
-        = link_to(' Sign up!', new_user_registration_path, :class => 'btn btn-success btn-large icon-user span4')        
-        = link_to(' Log In!', user_session_path, :class => 'btn btn-primary btn-large icon-signin span2')
+        = link_to(' Sign up!', new_user_registration_path, :class => 'btn btn-success btn-large icon-user')
+        = link_to(' Log In!', user_session_path, :class => 'btn btn-primary btn-large icon-signin')
