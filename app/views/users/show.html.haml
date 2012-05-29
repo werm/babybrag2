@@ -1,9 +1,13 @@
-.profile
-  = image_tag @user.profile_pic_url(:full).to_s
-%p
-  User: #{@user.name}
-%p
-  Email: #{@user.email if @user.email}
-%p
+.profile.span2
+  .pic-background
+    = image_tag @user.profile_pic_url(:small).to_s
+.details.span9
+  %p.username
+    #{@user.name}
+  %p.location
+    %i.icon-map-marker
+    #{@user.city}, #{@user.state}
+  %p
+    #{@user.about}
 
 /- if current_user.try(:admin?)
